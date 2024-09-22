@@ -10,6 +10,9 @@ COPY package*.json ./
 # ติดตั้ง dependencies
 RUN npm install
 
+
+RUN npm install mysql --save
+
 # คัดลอก source code ไปยัง container
 COPY . .
 
