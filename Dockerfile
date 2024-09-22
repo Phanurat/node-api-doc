@@ -15,4 +15,6 @@ COPY . .
 
 # รัน application บนพอร์ต 3000 ภายใน container
 EXPOSE 3000
-CMD ["npm", "start"]
+
+# รัน application
+CMD ["node", "src/index.js"]
