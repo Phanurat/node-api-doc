@@ -4,10 +4,9 @@ services:
     image: mysql:5.7
     container_name: mysql-db
     environment:
-      MYSQL_ROOT_PASSWORD: 1111
-      MYSQL_DATABASE: db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1111
+      MYSQL_ROOT_PASSWORD: 1111  # รหัสผ่านสำหรับผู้ใช้ root
+      MYSQL_DATABASE: db           # ชื่อฐานข้อมูลเริ่มต้น
+      # ไม่ต้องกำหนด MYSQL_USER และ MYSQL_PASSWORD
     ports:
       - "3306:3306"
     volumes:
@@ -23,7 +22,7 @@ services:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: 1111
     ports:
-      - "3001:80"  # phpMyAdmin accessible on port 3001
+      - "3001:80"
     depends_on:
       - db
     networks:
@@ -33,7 +32,7 @@ services:
     build: .
     container_name: nodejs-app
     ports:
-      - "4000:3000"  # Exposing Node.js app on port 3002
+      - "4000:3000"
     volumes:
       - .:/usr/src/app
     networks:
